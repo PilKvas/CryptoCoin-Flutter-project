@@ -1,5 +1,6 @@
-import 'package:crypto_application/features/crypto_coin/view/crypto_coin_screen.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:crypto_application/repositories/crypto_coins/models/models.dart';
+import 'package:crypto_application/routes/routes.dart';
 import 'package:flutter/material.dart';
 
 class CryptoCoinTile extends StatelessWidget {
@@ -13,7 +14,7 @@ class CryptoCoinTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => CryptoCoinScreen(coin: coin))),
+      onTap: () => AutoRouter.of(context).push(CryptoCoinRoute(coin: coin)),
       leading: Image.network(coin.details.fullImageUrl),
       title: Text(
         coin.name,
