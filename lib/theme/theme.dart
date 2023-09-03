@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 final darkTheme = ThemeData(
   scaffoldBackgroundColor: const Color.fromARGB(255, 31, 31, 31),
   primaryColor: Colors.black,
-  primarySwatch: Colors.pink,
+  primarySwatch: Colors.blue,
   dividerColor: Colors.white24,
   appBarTheme: const AppBarTheme(
     iconTheme: IconThemeData(color: Colors.white),
@@ -35,11 +35,10 @@ final darkTheme = ThemeData(
   ),
 );
 
-
 final lightTheme = ThemeData(
-  scaffoldBackgroundColor: Color.fromARGB(255, 245, 245, 245),
-  primaryColor: Colors.black,
-  primarySwatch: Colors.pink,
+  scaffoldBackgroundColor: const Color.fromARGB(255, 245, 245, 245),
+  primaryColor: const Color.fromARGB(255, 255, 255, 255),
+  primarySwatch: Colors.purple,
   dividerColor: const Color.fromARGB(60, 0, 0, 0),
   appBarTheme: const AppBarTheme(
     iconTheme: IconThemeData(color: Color.fromARGB(255, 0, 0, 0)),
@@ -51,7 +50,9 @@ final lightTheme = ThemeData(
       fontWeight: FontWeight.w700,
     ),
   ),
-  listTileTheme: const ListTileThemeData(iconColor: Color.fromARGB(255, 0, 0, 0)),
+  listTileTheme: const ListTileThemeData(
+    iconColor: Color.fromARGB(255, 0, 0, 0),
+  ),
   textTheme: TextTheme(
     bodyMedium: const TextStyle(
       color: Color.fromARGB(255, 0, 0, 0),

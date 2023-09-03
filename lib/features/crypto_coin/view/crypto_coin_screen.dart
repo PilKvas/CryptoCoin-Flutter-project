@@ -62,10 +62,6 @@ class _CryptoCoinScreenState extends State<CryptoCoinScreen> {
                     child: Center(
                       child: Text(
                         '${coinDetails.priceInUSD} \$',
-                        style: const TextStyle(
-                          fontSize: 26,
-                          fontWeight: FontWeight.w700,
-                        ),
                       ),
                     ),
                   ),
