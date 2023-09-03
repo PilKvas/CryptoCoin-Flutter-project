@@ -27,11 +27,6 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
   @override
   void initState() {
     _cryptoListBloc.add(LoadCryptoList());
-
-    // _timer = Timer.periodic(const Duration(seconds: 4), (timer) {
-    //   _loadCoins();
-    // });
-
     super.initState();
   }
 
@@ -46,6 +41,12 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Crypto Coin List"),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.sunny),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: BlocBuilder<CryptoListBloc, CryptoListState>(
         bloc: _cryptoListBloc,
@@ -80,7 +81,9 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
               ),
             );
           }
-          return const Center(child: CircularProgressIndicator(),);
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
         },
       ),
     );

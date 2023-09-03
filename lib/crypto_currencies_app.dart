@@ -1,4 +1,4 @@
-import 'package:crypto_application/routes/routes.dart';
+import 'package:crypto_application/features/crypto_list/view/crypto_list_screen.dart';
 import 'package:crypto_application/theme/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -8,8 +8,8 @@ class CryptoCurrenciesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: darkTheme,
-      routes: routes,
+      theme: lightTheme,
+      home: const CryptoListScreen(),
     );
   }
 }
