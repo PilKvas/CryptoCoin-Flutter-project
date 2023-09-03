@@ -1,9 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:crypto_application/features/crypto_coin/bloc/crypto_coin_bloc.dart';
-import 'package:crypto_application/features/crypto_coin/widgets/base_card.dart';
+import 'package:crypto_application/features/crypto_coin/widgets/widgets.dart';
 import 'package:crypto_application/repositories/crypto_coins/crypto_coins.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 
 @RoutePage()
@@ -47,19 +48,21 @@ class _CryptoCoinScreenState extends State<CryptoCoinScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: 160,
-                    width: 160,
+                    height: 160.h,
+                    width: 160.w,
                     child: Image.network(coinDetails.fullImageUrl),
                   ),
-                  const SizedBox(height: 24),
+                  SizedBox(
+                    height: 24.h,
+                  ),
                   Text(
                     coin.name,
-                    style: const TextStyle(
-                      fontSize: 26,
+                    style: TextStyle(
+                      fontSize: 26.sp,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8.h),
                   BaseCard(
                     child: Center(
                       child: Text(
@@ -74,7 +77,7 @@ class _CryptoCoinScreenState extends State<CryptoCoinScreen> {
                           title: 'Hight 24 Hour',
                           value: '${coinDetails.hight24Hour} \$',
                         ),
-                        const SizedBox(height: 6),
+                        SizedBox(height: 6.h),
                         _DataRow(
                           title: 'Low 24 Hour',
                           value: '${coinDetails.low24Hours} \$',
@@ -108,8 +111,8 @@ class _DataRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(width: 140, child: Text(title)),
-        const SizedBox(width: 32),
+        SizedBox(width: 140.w, child: Text(title)),
+        SizedBox(width: 32.w),
         Flexible(
           child: Text(value),
         ),
