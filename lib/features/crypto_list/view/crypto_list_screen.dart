@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:crypto_application/features/crypto_list/bloc/crypto_list_bloc.dart';
+import 'package:crypto_application/features/crypto_list/bloc/cubit/theme_cubit.dart';
 import 'package:crypto_application/features/crypto_list/widgets/widgets.dart';
 import 'package:crypto_application/repositories/crypto_coins/crypto_coins.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,6 @@ class CryptoListScreen extends StatefulWidget {
 }
 
 class _CryptoListScreenState extends State<CryptoListScreen> {
-  late Timer _timer;
   final _cryptoListBloc = CryptoListBloc(
     GetIt.I<CryptoCoinsInterface>(),
   );
@@ -32,19 +32,21 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
 
   @override
   void dispose() {
-    _timer.cancel();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    ThemeCubit theme = BlocProvider.of(context, listen: true);
     return Scaffold(
       appBar: AppBar(
         title: const Text("Crypto Coin List"),
         actions: [
           IconButton(
-            icon: Icon(Icons.sunny),
-            onPressed: () {},
+            icon: theme.isDark
+                ? const Icon(Icons.sunny)
+                : const Icon(Icons.nightlight_round_outlined),
+            onPressed: () => theme.changeTheme(),
           ),
         ],
       ),
